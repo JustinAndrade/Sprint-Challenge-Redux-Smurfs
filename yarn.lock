@@ -259,6 +259,13 @@ chokidar@^2.0.2:
   optionalDependencies:
     fsevents "^1.0.0"
 
+cjs@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/cjs/-/cjs-0.0.11.tgz#1fe528ebda8f9ee21f81a7f7b299a8d70b14a47c"
+  integrity sha1-H+Uo69qPnuIfgaf3spmo1wsUpHw=
+  dependencies:
+    sync-channel "*"
+
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
@@ -1805,6 +1812,11 @@ supports-color@^5.2.0, supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
+sync-channel@*:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/sync-channel/-/sync-channel-0.0.6.tgz#0bad830d8f1f11b8ce612549e0d9637bb0652850"
+  integrity sha1-C62DDY8fEbjOYSVJ4Nlje7BlKFA=
+
 tar-pack@^3.4.0:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/tar-pack/-/tar-pack-3.4.1.tgz#e1dbc03a9b9d3ba07e896ad027317eb679a10a1f"
@@ -1931,9 +1943,10 @@ unzip-response@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
 
-upath@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.0.tgz#ee2321ba0a786c50973db043a50b7bcba822361d"
+upath@^1.0.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.2.tgz#3db658600edaeeccbe6db5e684d67ee8c2acd068"
+  integrity sha512-kXpym8nmDmlCBr7nKdIx8P2jNBa+pBpIUFRnKJ4dr8htyYGJFokkr2ZvERRtUN+9SY+JqXouNgUPtv6JQva/2Q==
 
 update-notifier@^2.3.0:
   version "2.3.0"
