@@ -1,4 +1,5 @@
 import axios from 'axios';
+import reducer from '../reducers';
 
 /* ACTION TYPES */
 export const SMURFS = 'SMURFS';
@@ -27,3 +28,13 @@ export const getSmurfs = () => dispatch => {
 
   request.catch(err => dispatch({ type: ERROR, payload: err }));
 };
+
+export const addSmurf = newSmurf => dispatch => {
+  dispatch({ type: ADDING_SMURF, payload: newSmurf })
+ const add = axios.post('http://localhost:333/smurfs');
+
+ add.then(res => dispatch({ type: SMURFS, payload: res.data }))
+ 
+ add.catch(err => dispatch({ type: ERROR, payload: err }));
+}
+

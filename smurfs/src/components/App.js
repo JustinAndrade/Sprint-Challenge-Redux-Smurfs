@@ -5,6 +5,7 @@ import './App.css';
 
 import { getSmurfs } from '../actions';
 import SmurfList from './SmurfList';
+import NewSmurfForm from './NewSmurfForm';
 
 /*
  to wire this component up you're going to need a few things.
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
+        <NewSmurfForm />
         {this.props.smurfs.map((smurf, index) => 
           <SmurfList smurf={smurf} key={index} />
           )}
