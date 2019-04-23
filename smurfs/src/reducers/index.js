@@ -5,6 +5,7 @@ ADDING_SMURF,
 // UPDATING_SMURF,
 // DELETING_SMURF,
 ERROR,
+DELETING_SMURF,
 } from '../actions'
 
 const initialState = {
@@ -32,6 +33,14 @@ const reducer = (state = initialState, action) => {
         ...state,
         addingSmurf: true,
         smurfs: [...state.smurfs, action.payload]
+      }
+    }
+
+    case DELETING_SMURF: {
+      return {
+        ...state,
+        deletingSmurf: true,
+        smurfs: [...state.smurfs, - action.payload]
       }
     }
 
