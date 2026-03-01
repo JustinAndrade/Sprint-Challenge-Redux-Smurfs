@@ -1,7 +1,13 @@
-/* 
-  Action Types Go Here!
-  Be sure to export each action type so you can pull it into your reducer
-*/
+import axios from 'axios';
+import reducer from '../reducers';
+
+/* ACTION TYPES */
+export const SMURFS = 'SMURFS';
+export const FETCHING_SMURFS = 'FETCHING_SMURFS';
+export const ADDING_SMURF = 'ADDING_SMURF';
+export const UPDATING_SMURF = 'UPDATING_SMURF';
+export const DELETING_SMURF = 'DELETING_SMURF';
+export const ERROR = 'ERROR';
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -13,3 +19,30 @@
    U - updateSmurf
    D - deleteSmurf
 */
+
+export const getSmurfs = () => dispatch => {
+  dispatch({ type: FETCHING_SMURFS })
+  const request = axios.get('http://localhost:3333/smurfs');
+
+  request.then(res => dispatch({ type: SMURFS, payload: res.data }))
+
+  request.catch(err => dispatch({ type: ERROR, payload: err }));
+};
+
+export const addSmurf = smurf => dispatch => {
+  dispatch({ type: ADDING_SMURF, payload: smurf })
+ const add = axios.post('http://localhost:3333/smurfs');
+
+ add.then(res => dispatch({ type: SMURFS, payload: res.data }))
+ 
+ add.catch(err => dispatch({ type: ERROR, payload: err }));
+}
+
+export const deleteSmurf = smurf => dispatch => {
+  dispatch({ type: DELETING_SMURF, payload: smurf})
+  const del = axios.delete('http://localhost:3333/smurfs/',smurf);
+
+  del.then(res => dispatch({ type: SMURFS, payload: res.data }));
+  del.catch(err => dispatch({ type: ERROR, payload: err }));
+}
+
